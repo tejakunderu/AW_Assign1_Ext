@@ -10,7 +10,6 @@ chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
 });
 
 chrome.browserAction.onClicked.addListener(function(activeTab) {
-  //chrome.browserAction.setPopup({ popup: ''});
   //var newURL = 'http://localhost:8080/profile';
   var newURL = 'http://18.220.166.24/profile';
   chrome.tabs.create({ url: newURL });
