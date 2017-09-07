@@ -1,0 +1,47 @@
+{
+  "name": "Action Tracker",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "This extension was created as part of the class CSE 591: Adaptive Web",
+  "homepage_url": "https://www.linkedin.com/in/tejakunderu/",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "scripts": [
+      "src/bg/background.js"
+    ],
+    "persistent": false
+  },
+  "options_page": "src/options/index.html",
+  "browser_action": {
+    "default_icon": "icons/icon19.png",
+    "default_title": "Action Tracker"
+  },
+  "permissions": [
+    "clipboardRead",
+    "contentSettings",
+    "cookies",
+    "idle",
+    "notifications",
+    "tabs",
+    "geolocation",
+    "http://localhost:8080/*",
+    "http://18.220.166.24/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://localhost:8080/*",
+        "https://stackoverflow.com/*",
+        "http://18.220.166.24/*"
+      ],
+      "js": [
+        "src/inject/inject.js"
+      ]
+    }
+  ]
+}
